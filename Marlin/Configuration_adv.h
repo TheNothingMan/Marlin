@@ -181,9 +181,9 @@
  * The fan will turn on automatically whenever any stepper is enabled
  * and turn off after a set period after all steppers are turned off.
  */
-//#define USE_CONTROLLER_FAN
+#define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
-  //#define CONTROLLER_FAN_PIN FAN1_PIN  // Set a custom pin for the controller fan
+  #define CONTROLLER_FAN_PIN 7  // Set a custom pin for the controller fan
   #define CONTROLLERFAN_SECS 60          // Duration in seconds for the fan to run after all motors are disabled
   #define CONTROLLERFAN_SPEED 255        // 255 == full speed
 #endif
@@ -267,7 +267,7 @@
 // A single Z stepper driver is usually used to drive 2 stepper motors.
 // Uncomment this option to use a separate stepper driver for each Z axis motor.
 // The next unused E driver will be assigned to the second Z stepper.
-//#define Z_DUAL_STEPPER_DRIVERS
+#define Z_DUAL_STEPPER_DRIVERS
 
 #if ENABLED(Z_DUAL_STEPPER_DRIVERS)
 
@@ -525,7 +525,7 @@
   #endif
 
   // This allows hosts to request long names for files and folders with M33
-  //#define LONG_FILENAME_HOST_SUPPORT
+  #define LONG_FILENAME_HOST_SUPPORT
 
   // This option allows you to abort SD printing when any endstop is triggered.
   // This feature must be enabled with "M540 S1" or from the LCD menu.
@@ -763,10 +763,10 @@
 // until then, intended retractions can be detected by moves that only extrude and the direction.
 // the moves are than replaced by the firmware controlled ones.
 
-//#define FWRETRACT  //ONLY PARTIALLY TESTED
+#define FWRETRACT  //ONLY PARTIALLY TESTED
 #if ENABLED(FWRETRACT)
   #define MIN_RETRACT 0.1                //minimum extruded mm to accept a automatic gcode retraction attempt
-  #define RETRACT_LENGTH 3               //default retract length (positive mm)
+  #define RETRACT_LENGTH 2               //default retract length (positive mm)
   #define RETRACT_LENGTH_SWAP 13         //default swap retract length (positive mm), for extruder change
   #define RETRACT_FEEDRATE 45            //default feedrate for retracting (mm/s)
   #define RETRACT_ZLIFT 0                //default retract Z-lift
